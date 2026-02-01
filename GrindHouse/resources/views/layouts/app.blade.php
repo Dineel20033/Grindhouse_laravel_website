@@ -15,14 +15,14 @@
     @livewireStyles
 </head>
 
-<body class="bg-gray-50 font-sans antialiased pb-24 lg:pb-0">
+<body class="bg-gray-50 dark:bg-zinc-900 lg:dark:bg-gray-50 font-sans antialiased pb-24 lg:pb-0">
     <div class="min-h-screen flex flex-col">
 
-        <header class="bg-amber-100 shadow-lg relative z-50">
+        <header class="bg-amber-100 dark:bg-zinc-900 lg:dark:bg-amber-100 shadow-lg relative z-50">
             <div class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between py-2">
                 <a href="{{ route('home') }}" class="flex items-center xl:-ml-20">
                     <img src="{{ asset('assets/logo.png') }}" alt="Logo"
-                        class="w-24 md:w-32 opacity-90 mix-blend-multiply">
+                        class="w-24 md:w-32 opacity-90 mix-blend-multiply dark:mix-blend-normal lg:dark:mix-blend-multiply dark:invert lg:dark:invert-0">
                 </a>
 
                 <nav class="hidden lg:flex space-x-14">
@@ -43,7 +43,7 @@
 
                         <div class="relative" x-data="{ open: false }">
                             <button @click="open = !open" @click.outside="open = false"
-                                class="flex items-center space-x-2 text-gray-800 hover:text-amber-600 focus:outline-none">
+                                class="flex items-center space-x-2 text-gray-800 dark:text-gray-100 lg:dark:text-gray-800 hover:text-amber-600 focus:outline-none">
                                 <img src="{{ asset('assets/login.png') }}" alt="User"
                                     class="w-7 h-7 md:w-9 md:h-9 rounded-full border border-gray-300">
                                 <span class="font-medium text-sm md:text-base">{{ Auth::user()->name }}</span>
@@ -79,7 +79,7 @@
                     @else
                         <div class="hidden lg:flex items-center space-x-4">
                             <a href="{{ route('login') }}"
-                                class="flex items-center space-x-1 text-gray-800 hover:text-amber-600">
+                                class="flex items-center space-x-1 text-gray-800 dark:text-gray-100 lg:dark:text-gray-800 hover:text-amber-600">
                                 <img src="{{ asset('assets/login.png') }}" alt="Login" class="w-6 h-6 md:w-8 md:h-8">
                                 <span class="font-medium text-sm md:text-base">Sign In</span>
                             </a>
@@ -91,7 +91,7 @@
                         $cartCount = array_sum(array_column($cart, 'quantity'));
                     @endphp
                     <a href="{{ route('cart.index') }}"
-                        class="relative inline-block text-gray-800 hover:text-amber-600 transition-colors">
+                        class="relative inline-block text-gray-800 dark:text-gray-100 lg:dark:text-gray-800 hover:text-amber-600 transition-colors">
                         <svg class="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -110,36 +110,36 @@
             {{ $slot ?? '' }}
         </main>
 
-        <footer class="bg-amber-100 py-8 md:py-12 text-gray-900 mt-auto">
+        <footer class="bg-amber-100 dark:bg-zinc-900 lg:dark:bg-amber-100 py-8 md:py-12 text-gray-900 dark:text-gray-100 lg:dark:text-gray-900 mt-auto">
             <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-2">
                 {{-- Logo Section - Full width on very small screens, 1 col on others --}}
                 <div
                     class="col-span-2 sm:col-span-1 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left xl:ml-0">
                     <h2 class="font-bold text-base md:text-lg mb-3 tracking-wider">GRINDHOUSE.LK</h2>
                     <img src="{{ asset('assets/logo.png') }}" alt="Logo"
-                        class="w-20 md:w-28 opacity-90 mix-blend-multiply">
+                        class="w-20 md:w-28 opacity-90 mix-blend-multiply dark:mix-blend-normal lg:dark:mix-blend-multiply dark:invert lg:dark:invert-0">
                 </div>
 
                 {{-- About --}}
                 <div class="col-span-1 text-center md:text-left flex flex-col items-center md:items-start xl:ml-32">
-                    <h3 class="font-bold text-sm md:text-base mb-3 text-amber-900 tracking-wide">ABOUT</h3>
-                    <p class="text-xs md:text-sm leading-relaxed text-gray-700">
+                    <h3 class="font-bold text-sm md:text-base mb-3 text-amber-900 dark:text-amber-500 lg:dark:text-amber-900 tracking-wide">ABOUT</h3>
+                    <p class="text-xs md:text-sm leading-relaxed text-gray-700 dark:text-gray-400 lg:dark:text-gray-700">
                         GRINDHOUSE (PVT) LTD<br>18, Maharagama,<br>Colombo
                     </p>
                 </div>
 
                 {{-- Contact --}}
                 <div class="col-span-1 text-center md:text-left flex flex-col items-center md:items-start xl:ml-32">
-                    <h3 class="font-bold text-sm md:text-base mb-3 text-amber-900 tracking-wide">CONTACT</h3>
-                    <p class="text-xs md:text-sm text-gray-700 mb-1 font-medium">+94 112 123 456</p>
-                    <p class="text-[11px] md:text-sm text-gray-700 break-all">info@grindhouse.lk</p>
+                    <h3 class="font-bold text-sm md:text-base mb-3 text-amber-900 dark:text-amber-500 lg:dark:text-amber-900 tracking-wide">CONTACT</h3>
+                    <p class="text-xs md:text-sm text-gray-700 dark:text-gray-400 lg:dark:text-gray-700 mb-1 font-medium">+94 112 123 456</p>
+                    <p class="text-[11px] md:text-sm text-gray-700 dark:text-gray-400 lg:dark:text-gray-700 break-all">info@grindhouse.lk</p>
                 </div>
 
                 {{-- Links --}}
                 <div
                     class="col-span-2 sm:col-span-1 md:col-span-1 text-center md:text-left flex flex-col items-center md:items-start xl:ml-32">
-                    <h3 class="font-bold text-sm md:text-base mb-3 text-amber-900 tracking-wide">LINKS</h3>
-                    <ul class="flex md:flex-col gap-4 md:gap-2 text-xs md:text-sm font-medium text-gray-700">
+                    <h3 class="font-bold text-sm md:text-base mb-3 text-amber-900 dark:text-amber-500 lg:dark:text-amber-900 tracking-wide">LINKS</h3>
+                    <ul class="flex md:flex-col gap-4 md:gap-2 text-xs md:text-sm font-medium text-gray-700 dark:text-gray-400 lg:dark:text-gray-700">
                         <li><a href="{{ route('home') }}" class="hover:text-amber-700 transition">Home</a></li>
                         <li><a href="{{ route('products.index') }}" class="hover:text-amber-700 transition">Products</a>
                         </li>
@@ -149,7 +149,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-amber-200 mt-8 pt-6 text-center text-[10px] md:text-xs text-gray-600 px-4">
+            <div class="border-t border-amber-200 dark:border-zinc-800 lg:dark:border-amber-200 mt-8 pt-6 text-center text-[10px] md:text-xs text-gray-600 dark:text-gray-500 lg:dark:text-gray-600 px-4">
                 © {{ date('Y') }} GRINDHOUSE.LK. All rights reserved.
             </div>
         </footer>
@@ -157,8 +157,8 @@
 
     <!-- Mobile Navigation -->
     <nav
-        class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 px-6 py-2 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-        <div class="flex justify-between items-end text-[10px] font-medium text-gray-500">
+        class="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-zinc-900 border-t border-gray-200 dark:border-zinc-800 z-50 px-6 py-2 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+        <div class="flex justify-between items-end text-[10px] font-medium text-gray-500 dark:text-gray-400">
             <!-- Home -->
             <a href="{{ route('home') }}"
                 class="flex flex-col items-center w-16 space-y-1 hover:text-amber-600 transition-colors {{ request()->routeIs('home') ? 'text-amber-600' : '' }}">

@@ -1,8 +1,8 @@
 @props(['product', 'badge' => null])
 
 <div
-    class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden h-full relative">
-    <div class="relative w-full overflow-hidden bg-gray-100 border-b border-gray-100" style="aspect-ratio: 4/3;">
+    class="group bg-white dark:bg-zinc-800 lg:dark:bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-zinc-700 lg:dark:border-gray-100 flex flex-col overflow-hidden h-full relative">
+    <div class="relative w-full overflow-hidden bg-gray-100 dark:bg-zinc-700 lg:dark:bg-gray-100 border-b border-gray-100 dark:border-zinc-700 lg:dark:border-gray-100" style="aspect-ratio: 4/3;">
         <img src="{{ $product->image }}" alt="{{ $product->name }}"
             class="absolute inset-0 w-full h-full object-cover object-center transform group-hover:scale-110 transition duration-700 ease-in-out">
 
@@ -15,20 +15,20 @@
         @endif
     </div>
 
-    <div class="p-3 md:p-5 flex flex-col flex-grow relative border-t border-gray-50">
+    <div class="p-3 md:p-5 flex flex-col flex-grow relative border-t border-gray-50 dark:border-zinc-700 lg:dark:border-gray-50">
         <div class="flex-grow">
             <h3
-                class="text-sm md:text-lg font-bold text-gray-900 leading-tight mb-1 md:mb-2 transition-colors line-clamp-2">
+                class="text-sm md:text-lg font-bold text-gray-900 dark:text-gray-100 lg:dark:text-gray-900 leading-tight mb-1 md:mb-2 transition-colors line-clamp-2">
                 {{ $product->name }}
             </h3>
             <div class="mb-2 md:mb-3">
-                <span class="text-base md:text-xl font-extrabold text-amber-600">
+                <span class="text-base md:text-xl font-extrabold text-amber-600 dark:text-amber-500 lg:dark:text-amber-600">
                     LKR {{ number_format($product->price, 2) }}
                 </span>
             </div>
         </div>
 
-        <div class="mt-auto pt-2 md:pt-3 border-t border-gray-100">
+        <div class="mt-auto pt-2 md:pt-3 border-t border-gray-100 dark:border-zinc-700 lg:dark:border-gray-100">
             <a href="{{ route('products.show', $product) }}"
                 class="flex items-center justify-center w-full bg-green-600 hover:bg-green-700 text-white font-medium py-1.5 px-2 md:py-3 md:px-6 rounded-lg md:rounded-xl transition-all duration-300 shadow-md hover:shadow-lg gap-1.5 md:gap-2 text-xs md:text-lg md:font-bold">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24"

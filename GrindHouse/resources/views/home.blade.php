@@ -24,12 +24,12 @@
 
 
     <!-- Distinct Categories Section -->
-    <section class="py-8 md:py-16 bg-white border-b border-gray-200">
+    <section class="py-8 md:py-16 bg-white dark:bg-zinc-900 lg:dark:bg-white border-b border-gray-200 dark:border-zinc-800 lg:dark:border-gray-200">
         <div class="max-w-7xl mx-auto px-4 md:px-6">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-amber-700">Browse Categories</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-amber-700 dark:text-amber-500 lg:dark:text-amber-700">Browse Categories</h2>
             <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
                 @forelse ($categories as $category)
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col group cursor-pointer" onclick="window.location='{{ route('products.index', ['category' => $category->id]) }}'">
+                    <div class="bg-white dark:bg-zinc-800 lg:dark:bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col group cursor-pointer" onclick="window.location='{{ route('products.index', ['category' => $category->id]) }}'">
                         @php
                             $imagePath = $category->image;
                             if (empty($imagePath)) {
@@ -60,9 +60,9 @@
         </div>
     </section>
 
-    <section class="py-8 md:py-16 bg-white">
+    <section class="py-8 md:py-16 bg-white dark:bg-zinc-900 lg:dark:bg-white">
         <div class="max-w-7xl mx-auto px-4 md:px-6">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-amber-700">Featured Products</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-amber-700 dark:text-amber-500 lg:dark:text-amber-700">Featured Products</h2>
 
             <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
                 @forelse ($featuredProducts as $product)
@@ -74,55 +74,55 @@
         </div>
     </section>
 
-    <section class="py-8 md:py-16 bg-amber-50">
+    <section class="py-8 md:py-16 bg-amber-50 dark:bg-zinc-950 lg:dark:bg-amber-50">
         <div class="max-w-7xl mx-auto px-4 md:px-6">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Why Choose Us</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800 dark:text-gray-100 lg:dark:text-gray-800">Why Choose Us</h2>
 
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
                 <!-- Feature 1 -->
-                <div class="bg-white p-3 md:p-6 rounded-xl shadow-md text-center hover:-translate-y-2 transition duration-300 h-full flex flex-col justify-center">
+                <div class="bg-white dark:bg-zinc-900 lg:dark:bg-white p-3 md:p-6 rounded-xl shadow-md text-center hover:-translate-y-2 transition duration-300 h-full flex flex-col justify-center">
                     <div
-                        class="w-10 h-10 md:w-16 md:h-16 mx-auto bg-amber-100 rounded-full flex items-center justify-center mb-2 md:mb-4 text-amber-600 text-xl md:text-3xl">
+                        class="w-10 h-10 md:w-16 md:h-16 mx-auto bg-amber-100 dark:bg-amber-900/50 lg:dark:bg-amber-100 rounded-full flex items-center justify-center mb-2 md:mb-4 text-amber-600 dark:text-amber-500 lg:dark:text-amber-600 text-xl md:text-3xl">
                         💡
                     </div>
-                    <h3 class="text-sm md:text-xl font-bold text-gray-800 mb-1 md:mb-2">Expert Advice</h3>
-                    <p class="text-gray-600 text-[10px] md:text-sm leading-tight md:leading-normal">
+                    <h3 class="text-sm md:text-xl font-bold text-gray-800 dark:text-gray-100 lg:dark:text-gray-800 mb-1 md:mb-2">Expert Advice</h3>
+                    <p class="text-gray-600 dark:text-gray-400 lg:dark:text-gray-600 text-[10px] md:text-sm leading-tight md:leading-normal">
                         Our knowledgeable staff is always ready to provide expert advice on equipment that suits your needs.
                     </p>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="bg-white p-3 md:p-6 rounded-xl shadow-md text-center hover:-translate-y-2 transition duration-300 h-full flex flex-col justify-center">
+                <div class="bg-white dark:bg-zinc-900 lg:dark:bg-white p-3 md:p-6 rounded-xl shadow-md text-center hover:-translate-y-2 transition duration-300 h-full flex flex-col justify-center">
                     <div
-                        class="w-10 h-10 md:w-16 md:h-16 mx-auto bg-amber-100 rounded-full flex items-center justify-center mb-2 md:mb-4 text-amber-600 text-xl md:text-3xl">
+                        class="w-10 h-10 md:w-16 md:h-16 mx-auto bg-amber-100 dark:bg-amber-900/50 lg:dark:bg-amber-100 rounded-full flex items-center justify-center mb-2 md:mb-4 text-amber-600 dark:text-amber-500 lg:dark:text-amber-600 text-xl md:text-3xl">
                         👍
                     </div>
-                    <h3 class="text-sm md:text-xl font-bold text-gray-800 mb-1 md:mb-2">Unique Selection</h3>
-                    <p class="text-gray-600 text-[10px] md:text-sm leading-tight md:leading-normal">
+                    <h3 class="text-sm md:text-xl font-bold text-gray-800 dark:text-gray-100 lg:dark:text-gray-800 mb-1 md:mb-2">Unique Selection</h3>
+                    <p class="text-gray-600 dark:text-gray-400 lg:dark:text-gray-600 text-[10px] md:text-sm leading-tight md:leading-normal">
                         Explore a diverse range of gym equipment tailored to meet all fitness levels and preferences.
                     </p>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="bg-white p-3 md:p-6 rounded-xl shadow-md text-center hover:-translate-y-2 transition duration-300 h-full flex flex-col justify-center">
+                <div class="bg-white dark:bg-zinc-900 lg:dark:bg-white p-3 md:p-6 rounded-xl shadow-md text-center hover:-translate-y-2 transition duration-300 h-full flex flex-col justify-center">
                     <div
-                        class="w-10 h-10 md:w-16 md:h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-2 md:mb-4 text-green-600 text-xl md:text-3xl">
+                        class="w-10 h-10 md:w-16 md:h-16 mx-auto bg-green-100 dark:bg-green-900/50 lg:dark:bg-green-100 rounded-full flex items-center justify-center mb-2 md:mb-4 text-green-600 dark:text-green-500 lg:dark:text-green-600 text-xl md:text-3xl">
                         💲
                     </div>
-                    <h3 class="text-sm md:text-xl font-bold text-gray-800 mb-1 md:mb-2">Competitive Prices</h3>
-                    <p class="text-gray-600 text-[10px] md:text-sm leading-tight md:leading-normal">
+                    <h3 class="text-sm md:text-xl font-bold text-gray-800 dark:text-gray-100 lg:dark:text-gray-800 mb-1 md:mb-2">Competitive Prices</h3>
+                    <p class="text-gray-600 dark:text-gray-400 lg:dark:text-gray-600 text-[10px] md:text-sm leading-tight md:leading-normal">
                         We offer competitive pricing on all our products, giving you great value without compromising quality.
                     </p>
                 </div>
 
                 <!-- Feature 4 -->
-                <div class="bg-white p-3 md:p-6 rounded-xl shadow-md text-center hover:-translate-y-2 transition duration-300 h-full flex flex-col justify-center">
+                <div class="bg-white dark:bg-zinc-900 lg:dark:bg-white p-3 md:p-6 rounded-xl shadow-md text-center hover:-translate-y-2 transition duration-300 h-full flex flex-col justify-center">
                     <div
-                        class="w-10 h-10 md:w-16 md:h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-2 md:mb-4 text-blue-600 text-xl md:text-3xl">
+                        class="w-10 h-10 md:w-16 md:h-16 mx-auto bg-blue-100 dark:bg-blue-900/50 lg:dark:bg-blue-100 rounded-full flex items-center justify-center mb-2 md:mb-4 text-blue-600 dark:text-blue-500 lg:dark:text-blue-600 text-xl md:text-3xl">
                         🛡️
                     </div>
-                    <h3 class="text-sm md:text-xl font-bold text-gray-800 mb-1 md:mb-2 text-wrap">Satisfaction Guarantee</h3>
-                    <p class="text-gray-600 text-[10px] md:text-sm leading-tight md:leading-normal">
+                    <h3 class="text-sm md:text-xl font-bold text-gray-800 dark:text-gray-100 lg:dark:text-gray-800 mb-1 md:mb-2 text-wrap">Satisfaction Guarantee</h3>
+                    <p class="text-gray-600 dark:text-gray-400 lg:dark:text-gray-600 text-[10px] md:text-sm leading-tight md:leading-normal">
                         We stand by our products with a satisfaction guarantee, ensuring your investment is protected.
                     </p>
                 </div>
