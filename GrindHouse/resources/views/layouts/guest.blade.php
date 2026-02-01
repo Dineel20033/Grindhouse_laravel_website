@@ -18,7 +18,6 @@
 
         <style>
             .glass-card {
-                background: rgba(255, 255, 255, 0.95);
                 backdrop-filter: blur(20px);
                 border: 1px solid rgba(255, 255, 255, 0.2);
             }
@@ -44,7 +43,7 @@
 
             <!-- Main Card -->
             <div class="w-full sm:max-w-md px-4 sm:px-0 relative z-10">
-                <div class="glass-card px-6 py-8 sm:px-10 sm:py-10 shadow-2xl rounded-2xl">
+                <div class="glass-card bg-white/95 dark:bg-zinc-900/95 lg:dark:bg-white/95 px-6 py-8 sm:px-10 sm:py-10 shadow-2xl rounded-2xl">
                     {{ $slot }}
                 </div>
 

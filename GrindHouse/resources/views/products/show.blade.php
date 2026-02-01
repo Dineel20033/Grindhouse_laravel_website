@@ -3,32 +3,32 @@
 @section('content')
 
 <main class="container mx-auto py-6 md:py-12 px-4 md:px-6">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 md:mb-10 border-b pb-4">Product Details</h2>
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100 lg:dark:text-gray-800 mb-6 md:mb-10 border-b dark:border-zinc-700 lg:dark:border-gray-200 pb-4">Product Details</h2>
 
-    <div class="bg-white p-4 md:p-8 rounded-xl shadow-2xl flex flex-col md:flex-row gap-6 md:gap-10">
+    <div class="bg-white dark:bg-zinc-800 lg:dark:bg-white p-4 md:p-8 rounded-xl shadow-2xl flex flex-col md:flex-row gap-6 md:gap-10">
         <div class="md:w-1/2">
             <img src="{{ $product->image }}" alt="{{ $product->name }}" 
-                 class="w-full h-auto max-h-[400px] md:h-96 object-contain md:object-cover rounded-lg shadow-md md:shadow-xl bg-gray-50">
+                 class="w-full h-auto max-h-[400px] md:h-96 object-contain md:object-cover rounded-lg shadow-md md:shadow-xl bg-gray-50 dark:bg-white lg:dark:bg-gray-50">
         </div>
 
         <div class="md:w-1/2 flex flex-col justify-between">
             <div>
-                <h3 class="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-gray-900">{{ $product->name }}</h3>
-                <p class="text-lg md:text-xl text-amber-600 font-semibold mb-4 md:mb-6">
+                <h3 class="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-gray-900 dark:text-white lg:dark:text-gray-900">{{ $product->name }}</h3>
+                <p class="text-lg md:text-xl text-amber-600 dark:text-amber-500 lg:dark:text-amber-600 font-semibold mb-4 md:mb-6">
                     LKR {{ number_format($product->price, 2) }}
                 </p>
-                <div class="text-sm md:text-base text-gray-700 mb-6 md:mb-8 whitespace-pre-line leading-relaxed">
+                <div class="text-sm md:text-base text-gray-700 dark:text-gray-300 lg:dark:text-gray-700 mb-6 md:mb-8 whitespace-pre-line leading-relaxed">
                     {{ $product->description }}
                 </div>
-                <p class="text-xs md:text-sm text-gray-500 bg-gray-100 w-fit px-2 py-1 rounded">Category: {{ $product->category->name }}</p>
+                <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400 lg:dark:text-gray-500 bg-gray-100 dark:bg-zinc-700 lg:dark:bg-gray-100 w-fit px-2 py-1 rounded">Category: {{ $product->category->name }}</p>
             </div>
 
             <form action="{{ route('cart.add', $product->id) }}" method="POST" class="flex flex-col gap-4 mt-6">
                 @csrf
                 <div class="flex items-center gap-4">
-                    <label for="quantity" class="font-semibold text-gray-700">Quantity:</label>
+                    <label for="quantity" class="font-semibold text-gray-700 dark:text-gray-300 lg:dark:text-gray-700">Quantity:</label>
                     <input type="number" id="quantity" name="quantity" value="1" min="1" required
-                           class="w-20 px-3 py-2 border rounded-lg text-center focus:ring-amber-500 focus:border-amber-500">
+                           class="w-20 px-3 py-2 border rounded-lg text-center focus:ring-amber-500 focus:border-amber-500 dark:bg-zinc-900 dark:border-zinc-700 dark:text-gray-100 lg:dark:bg-white lg:dark:border-gray-300 lg:dark:text-gray-900">
                 </div>
                 
                 <button type="submit" 

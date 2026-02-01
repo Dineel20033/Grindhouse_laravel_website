@@ -61,22 +61,22 @@ new class extends Component {
     }
 }; ?>
 
-<div class="bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="bg-white dark:bg-zinc-800 lg:dark:bg-white rounded-xl shadow-lg overflow-hidden">
     @if (!empty($cart))
         
         {{-- Desktop Table View --}}
         <div class="hidden md:block overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-zinc-700 lg:dark:divide-gray-200">
+                <thead class="bg-gray-50 dark:bg-zinc-700 lg:dark:bg-gray-50">
                     <tr>
-                        <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Product</th>
-                        <th class="px-6 py-4 text-center text-xs font-bold text-gray-500 uppercase tracking-wider">Price</th>
-                        <th class="px-6 py-4 text-center text-xs font-bold text-gray-500 uppercase tracking-wider">Quantity</th>
-                        <th class="px-6 py-4 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Subtotal</th>
-                        <th class="px-6 py-4 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Action</th>
+                        <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 dark:text-gray-300 lg:dark:text-gray-500 uppercase tracking-wider">Product</th>
+                        <th class="px-6 py-4 text-center text-xs font-bold text-gray-500 dark:text-gray-300 lg:dark:text-gray-500 uppercase tracking-wider">Price</th>
+                        <th class="px-6 py-4 text-center text-xs font-bold text-gray-500 dark:text-gray-300 lg:dark:text-gray-500 uppercase tracking-wider">Quantity</th>
+                        <th class="px-6 py-4 text-right text-xs font-bold text-gray-500 dark:text-gray-300 lg:dark:text-gray-500 uppercase tracking-wider">Subtotal</th>
+                        <th class="px-6 py-4 text-right text-xs font-bold text-gray-500 dark:text-gray-300 lg:dark:text-gray-500 uppercase tracking-wider">Action</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-gray-200">
+                <tbody class="divide-y divide-gray-200 dark:divide-zinc-700 lg:dark:divide-gray-200">
                     @foreach ($cart as $id => $item)
                         <tr wire:key="{{ $id }}">
                             <td class="px-6 py-4 whitespace-nowrap">
@@ -86,24 +86,24 @@ new class extends Component {
                                         <img class="h-10 w-10 rounded-md object-cover" src="{{ $item['image'] }}" alt="{{ $item['name'] }}">
                                     </div>
                                     @endif
-                                    <div class="text-sm font-semibold text-gray-900">{{ $item['name'] }}</div>
+                                    <div class="text-sm font-semibold text-gray-900 dark:text-gray-100 lg:dark:text-gray-900">{{ $item['name'] }}</div>
                                 </div>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-700">
+                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-700 dark:text-gray-300 lg:dark:text-gray-700">
                                 LKR {{ number_format($item['price'], 2) }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-center">
                                 <div class="flex items-center justify-center space-x-2">
-                                    <button type="button" wire:click="decrement('{{ $id }}')" class="p-1 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 focus:outline-none transition">
+                                    <button type="button" wire:click="decrement('{{ $id }}')" class="p-1 rounded-full bg-gray-100 dark:bg-zinc-700 lg:dark:bg-gray-100 hover:bg-gray-200 dark:hover:bg-zinc-600 lg:dark:hover:bg-gray-200 text-gray-600 dark:text-gray-300 lg:dark:text-gray-600 focus:outline-none transition">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg>
                                     </button>
-                                    <span class="text-sm font-medium w-6 text-center">{{ $item['quantity'] }}</span>
-                                    <button type="button" wire:click="increment('{{ $id }}')" class="p-1 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 focus:outline-none transition">
+                                    <span class="text-sm font-medium w-6 text-center text-gray-900 dark:text-gray-100 lg:dark:text-gray-900">{{ $item['quantity'] }}</span>
+                                    <button type="button" wire:click="increment('{{ $id }}')" class="p-1 rounded-full bg-gray-100 dark:bg-zinc-700 lg:dark:bg-gray-100 hover:bg-gray-200 dark:hover:bg-zinc-600 lg:dark:hover:bg-gray-200 text-gray-600 dark:text-gray-300 lg:dark:text-gray-600 focus:outline-none transition">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                                     </button>
                                 </div>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-bold text-gray-900">
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-bold text-gray-900 dark:text-gray-100 lg:dark:text-gray-900">
                                 LKR {{ number_format($item['price'] * $item['quantity'], 2) }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
@@ -119,35 +119,35 @@ new class extends Component {
         </div>
 
         {{-- Mobile List View --}}
-        <div class="md:hidden divide-y divide-gray-200">
+        <div class="md:hidden divide-y divide-gray-200 dark:divide-zinc-700 lg:dark:divide-gray-200">
             @foreach ($cart as $id => $item)
                 <div class="p-4" wire:key="mobile-cart-item-{{ $id }}">
                     <div class="flex justify-between items-start mb-2">
                         <div class="flex items-center gap-3">
                              @if(isset($item['image']))
-                                <img class="h-16 w-16 rounded-lg object-cover bg-gray-50" src="{{ $item['image'] }}" alt="{{ $item['name'] }}">
+                                <img class="h-16 w-16 rounded-lg object-cover bg-gray-50 dark:bg-zinc-700 lg:dark:bg-gray-50" src="{{ $item['image'] }}" alt="{{ $item['name'] }}">
                             @endif
                             <div>
-                                <h3 class="font-bold text-gray-900">{{ $item['name'] }}</h3>
-                                <p class="text-gray-500 text-xs">LKR {{ number_format($item['price'], 2) }} / unit</p>
+                                <h3 class="font-bold text-gray-900 dark:text-gray-100 lg:dark:text-gray-900">{{ $item['name'] }}</h3>
+                                <p class="text-gray-500 dark:text-gray-400 lg:dark:text-gray-500 text-xs">LKR {{ number_format($item['price'], 2) }} / unit</p>
                             </div>
                         </div>
-                         <button type="button" wire:click.prevent="remove('{{ $id }}')" class="text-gray-400 hover:text-red-500 p-1">
+                         <button type="button" wire:click.prevent="remove('{{ $id }}')" class="text-gray-400 dark:text-gray-500 lg:dark:text-gray-400 hover:text-red-500 p-1">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                         </button>
                     </div>
                     
                     <div class="flex justify-between items-center mt-3">
-                        <div class="flex items-center space-x-3 bg-gray-50 rounded-lg p-1">
-                            <button type="button" wire:click.prevent="decrement('{{ $id }}')" class="p-1.5 rounded-md bg-white shadow-sm text-gray-600 hover:text-amber-600 transition">
+                        <div class="flex items-center space-x-3 bg-gray-50 dark:bg-zinc-700 lg:dark:bg-gray-50 rounded-lg p-1">
+                            <button type="button" wire:click.prevent="decrement('{{ $id }}')" class="p-1.5 rounded-md bg-white dark:bg-zinc-600 lg:dark:bg-white shadow-sm text-gray-600 dark:text-gray-300 lg:dark:text-gray-600 hover:text-amber-600 transition">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg>
                             </button>
-                            <span class="font-bold text-gray-800 w-6 text-center">{{ $item['quantity'] }}</span>
-                            <button type="button" wire:click.prevent="increment('{{ $id }}')" class="p-1.5 rounded-md bg-white shadow-sm text-gray-600 hover:text-amber-600 transition">
+                            <span class="font-bold text-gray-800 dark:text-gray-100 lg:dark:text-gray-800 w-6 text-center">{{ $item['quantity'] }}</span>
+                            <button type="button" wire:click.prevent="increment('{{ $id }}')" class="p-1.5 rounded-md bg-white dark:bg-zinc-600 lg:dark:bg-white shadow-sm text-gray-600 dark:text-gray-300 lg:dark:text-gray-600 hover:text-amber-600 transition">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                             </button>
                         </div>
-                        <span class="font-extrabold text-amber-600">LKR {{ number_format($item['price'] * $item['quantity'], 2) }}</span>
+                        <span class="font-extrabold text-amber-600 dark:text-amber-500 lg:dark:text-amber-600">LKR {{ number_format($item['price'] * $item['quantity'], 2) }}</span>
                     </div>
                 </div>
             @endforeach
