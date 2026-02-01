@@ -22,7 +22,7 @@
             <div class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between py-2">
                 <a href="{{ route('home') }}" class="flex items-center md:-ml-20">
                     <img src="{{ asset('assets/logo.png') }}" alt="Logo"
-                        class="w-24 md:w-32 opacity-90 mix-blend-multiply dark:opacity-100 dark:mix-blend-normal dark:invert">
+                        class="w-24 md:w-32 opacity-90 mix-blend-multiply dark:opacity-100 dark:mix-blend-normal dark:invert md:dark:opacity-90 md:dark:mix-blend-multiply md:dark:filter-none">
                 </a>
 
                 <nav class="hidden md:flex space-x-14">

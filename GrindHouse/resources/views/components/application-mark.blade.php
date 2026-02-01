@@ -1,1 +1,1 @@
-<img src="{{ asset('assets/logo.png') }}" alt="GrindHouse Logo" {{ $attributes->merge(['class' => 'w-12 h-12 object-contain dark:invert']) }}>
+<img src="{{ asset('assets/logo.png') }}" alt="GrindHouse Logo" {{ $attributes->merge(['class' => 'w-12 h-12 object-contain']) }}>
