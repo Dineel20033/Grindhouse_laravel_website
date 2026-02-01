@@ -1,1 +1,1 @@
-<img src="{{ asset('assets/logo.png') }}" alt="GrindHouse Logo" {{ $attributes->merge(['class' => 'w-full h-auto max-w-[150px]']) }}>
+<img src="{{ asset('assets/logo.png') }}" alt="GrindHouse Logo" {{ $attributes->merge(['class' => 'w-full h-auto max-w-[150px] dark:invert']) }}>
