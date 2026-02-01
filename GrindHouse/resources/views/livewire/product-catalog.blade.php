@@ -70,7 +70,7 @@ new class extends Component {
         
         {{-- Mobile Search --}}
         <div class="relative">
-            <input wire:model.live.debounce.300ms="search" type="text" placeholder="Search products..." class="w-full pl-10 pr-4 py-2 rounded-lg border-gray-300 focus:border-amber-500 focus:ring-amber-500 shadow-sm">
+            <input wire:model.live.debounce.300ms="search" type="text" placeholder="Search products..." class="w-full pl-10 pr-4 py-2 rounded-lg border-gray-300 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-100 focus:border-amber-500 focus:ring-amber-500 shadow-sm">
             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -78,14 +78,14 @@ new class extends Component {
             </div>
         </div>
 
-        <div class="flex items-center justify-between bg-amber-50 p-3 rounded-lg border border-amber-100">
-            <div class="flex items-center gap-2 text-amber-900 font-bold">
+        <div class="flex items-center justify-between bg-amber-50 dark:bg-zinc-800 p-3 rounded-lg border border-amber-100 dark:border-zinc-700">
+            <div class="flex items-center gap-2 text-amber-900 dark:text-amber-500 font-bold">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
                 <span>Category</span>
             </div>
-            <select wire:model.live="selectedCategory" class="form-select block w-48 pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm rounded-md shadow-sm">
+            <select wire:model.live="selectedCategory" class="form-select block w-48 pl-3 pr-10 py-2 text-base border-gray-300 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-100 focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm rounded-md shadow-sm">
                 <option value="">All Products</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">
