@@ -20,7 +20,7 @@
 
         <header class="bg-amber-100 shadow-lg relative z-50">
             <div class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between py-2">
-                <a href="{{ route('home') }}" class="flex items-center md:-ml-20">
+                <a href="{{ route('home') }}" class="flex items-center xl:-ml-20">
                     <img src="{{ asset('assets/logo.png') }}" alt="Logo"
                         class="w-24 md:w-32 opacity-90 mix-blend-multiply dark:opacity-100 dark:mix-blend-normal dark:invert md:dark:opacity-90 md:dark:mix-blend-multiply md:dark:filter-none">
                 </a>
@@ -38,7 +38,7 @@
                         Us</a>
                 </nav>
 
-                <div class="flex items-center space-x-6 md:space-x-12 md:-mr-8">
+                <div class="flex items-center space-x-6 md:space-x-12 xl:-mr-8">
                     @auth
 
                         <div class="relative" x-data="{ open: false }">
@@ -114,14 +114,14 @@
             <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-2">
                 {{-- Logo Section - Full width on very small screens, 1 col on others --}}
                 <div
-                    class="col-span-2 sm:col-span-1 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left md:-ml-32">
+                    class="col-span-2 sm:col-span-1 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left xl:-ml-32">
                     <h2 class="font-bold text-base md:text-lg mb-3 tracking-wider">GRINDHOUSE.LK</h2>
                     <img src="{{ asset('assets/logo.png') }}" alt="Logo"
                         class="w-20 md:w-28 opacity-90 mix-blend-multiply">
                 </div>
 
                 {{-- About --}}
-                <div class="col-span-1 text-center md:text-left flex flex-col items-center md:items-start md:ml-32">
+                <div class="col-span-1 text-center md:text-left flex flex-col items-center md:items-start xl:ml-32">
                     <h3 class="font-bold text-sm md:text-base mb-3 text-amber-900 tracking-wide">ABOUT</h3>
                     <p class="text-xs md:text-sm leading-relaxed text-gray-700">
                         GRINDHOUSE (PVT) LTD<br>18, Maharagama,<br>Colombo
@@ -129,7 +129,7 @@
                 </div>
 
                 {{-- Contact --}}
-                <div class="col-span-1 text-center md:text-left flex flex-col items-center md:items-start md:ml-32">
+                <div class="col-span-1 text-center md:text-left flex flex-col items-center md:items-start xl:ml-32">
                     <h3 class="font-bold text-sm md:text-base mb-3 text-amber-900 tracking-wide">CONTACT</h3>
                     <p class="text-xs md:text-sm text-gray-700 mb-1 font-medium">+94 112 123 456</p>
                     <p class="text-[11px] md:text-sm text-gray-700 break-all">info@grindhouse.lk</p>
@@ -137,7 +137,7 @@
 
                 {{-- Links --}}
                 <div
-                    class="col-span-2 sm:col-span-1 md:col-span-1 text-center md:text-left flex flex-col items-center md:items-start md:ml-32">
+                    class="col-span-2 sm:col-span-1 md:col-span-1 text-center md:text-left flex flex-col items-center md:items-start xl:ml-32">
                     <h3 class="font-bold text-sm md:text-base mb-3 text-amber-900 tracking-wide">LINKS</h3>
                     <ul class="flex md:flex-col gap-4 md:gap-2 text-xs md:text-sm font-medium text-gray-700">
                         <li><a href="{{ route('home') }}" class="hover:text-amber-700 transition">Home</a></li>
