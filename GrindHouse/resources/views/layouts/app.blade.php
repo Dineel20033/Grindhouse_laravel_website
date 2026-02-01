@@ -25,7 +25,7 @@
                         class="w-24 md:w-32 opacity-90 mix-blend-multiply dark:opacity-100 dark:mix-blend-normal dark:invert md:dark:opacity-90 md:dark:mix-blend-multiply md:dark:filter-none">
                 </a>
 
-                <nav class="hidden md:flex space-x-14">
+                <nav class="hidden lg:flex space-x-14">
                     <a href="{{ route('home') }}"
                         class="text-base md:text-lg text-gray-800 font-medium hover:text-amber-600 hover:bg-amber-50 px-3 py-2 rounded-lg transition">Home</a>
                     <a href="{{ route('products.index') }}"
@@ -77,7 +77,7 @@
                             </div>
                         </div>
                     @else
-                        <div class="hidden md:flex items-center space-x-4">
+                        <div class="hidden lg:flex items-center space-x-4">
                             <a href="{{ route('login') }}"
                                 class="flex items-center space-x-1 text-gray-800 hover:text-amber-600">
                                 <img src="{{ asset('assets/login.png') }}" alt="Login" class="w-6 h-6 md:w-8 md:h-8">
@@ -157,7 +157,7 @@
 
     <!-- Mobile Navigation -->
     <nav
-        class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 px-6 py-2 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+        class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 px-6 py-2 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
         <div class="flex justify-between items-end text-[10px] font-medium text-gray-500">
             <!-- Home -->
             <a href="{{ route('home') }}"
