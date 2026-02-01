@@ -18,7 +18,7 @@
 <body class="bg-gray-50 font-sans antialiased pb-24 md:pb-0">
     <div class="min-h-screen flex flex-col">
 
-        <header class="bg-amber-100 dark:bg-zinc-900 shadow-lg relative z-50">
+        <header class="bg-amber-100 shadow-lg relative z-50">
             <div class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between py-2">
                 <a href="{{ route('home') }}" class="flex items-center md:-ml-20">
                     <img src="{{ asset('assets/logo.png') }}" alt="Logo"
@@ -27,14 +27,14 @@
 
                 <nav class="hidden md:flex space-x-14">
                     <a href="{{ route('home') }}"
-                        class="text-base md:text-lg text-gray-800 dark:text-gray-100 font-medium hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-zinc-800 px-3 py-2 rounded-lg transition">Home</a>
+                        class="text-base md:text-lg text-gray-800 font-medium hover:text-amber-600 hover:bg-amber-50 px-3 py-2 rounded-lg transition">Home</a>
                     <a href="{{ route('products.index') }}"
-                        class="text-base md:text-lg text-gray-800 dark:text-gray-100 font-medium hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-zinc-800 px-3 py-2 rounded-lg transition">Products</a>
+                        class="text-base md:text-lg text-gray-800 font-medium hover:text-amber-600 hover:bg-amber-50 px-3 py-2 rounded-lg transition">Products</a>
                     <a href="{{ route('about') }}"
-                        class="text-base md:text-lg text-gray-800 dark:text-gray-100 font-medium hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-zinc-800 px-3 py-2 rounded-lg transition">About
+                        class="text-base md:text-lg text-gray-800 font-medium hover:text-amber-600 hover:bg-amber-50 px-3 py-2 rounded-lg transition">About
                         Us</a>
                     <a href="{{ route('contact.index') }}"
-                        class="text-base md:text-lg text-gray-800 dark:text-gray-100 font-medium hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-zinc-800 px-3 py-2 rounded-lg transition">Contact
+                        class="text-base md:text-lg text-gray-800 font-medium hover:text-amber-600 hover:bg-amber-50 px-3 py-2 rounded-lg transition">Contact
                         Us</a>
                 </nav>
 
@@ -43,11 +43,11 @@
 
                         <div class="relative" x-data="{ open: false }">
                             <button @click="open = !open" @click.outside="open = false"
-                                class="flex items-center space-x-2 text-gray-800 dark:text-gray-100 hover:text-amber-600 focus:outline-none">
+                                class="flex items-center space-x-2 text-gray-800 hover:text-amber-600 focus:outline-none">
                                 <img src="{{ asset('assets/login.png') }}" alt="User"
                                     class="w-7 h-7 md:w-9 md:h-9 rounded-full border border-gray-300">
                                 <span class="font-medium text-sm md:text-base">{{ Auth::user()->name }}</span>
-                                <svg class="w-4 h-4 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M19 9l-7 7-7-7"></path>
                                 </svg>
@@ -79,7 +79,7 @@
                     @else
                         <div class="hidden md:flex items-center space-x-4">
                             <a href="{{ route('login') }}"
-                                class="flex items-center space-x-1 text-gray-800 dark:text-gray-100 hover:text-amber-600">
+                                class="flex items-center space-x-1 text-gray-800 hover:text-amber-600">
                                 <img src="{{ asset('assets/login.png') }}" alt="Login" class="w-6 h-6 md:w-8 md:h-8">
                                 <span class="font-medium text-sm md:text-base">Sign In</span>
                             </a>
@@ -91,7 +91,7 @@
                         $cartCount = array_sum(array_column($cart, 'quantity'));
                     @endphp
                     <a href="{{ route('cart.index') }}"
-                        class="relative inline-block text-gray-800 dark:text-gray-100 hover:text-amber-600 transition-colors">
+                        class="relative inline-block text-gray-800 hover:text-amber-600 transition-colors">
                         <svg class="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
