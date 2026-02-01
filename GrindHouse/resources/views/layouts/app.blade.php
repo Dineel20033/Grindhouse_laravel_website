@@ -114,7 +114,7 @@
             <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-2">
                 {{-- Logo Section - Full width on very small screens, 1 col on others --}}
                 <div
-                    class="col-span-2 sm:col-span-1 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left xl:-ml-32">
+                    class="col-span-2 sm:col-span-1 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left xl:ml-0">
                     <h2 class="font-bold text-base md:text-lg mb-3 tracking-wider">GRINDHOUSE.LK</h2>
                     <img src="{{ asset('assets/logo.png') }}" alt="Logo"
                         class="w-20 md:w-28 opacity-90 mix-blend-multiply">
