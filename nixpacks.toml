@@ -1,2 +1,2 @@
 [phases.setup]
-aptPkgs = ["php-cli", "php-mbstring", "php-xml", "php-curl", "php-zip", "php-mysql", "composer"]
+aptPkgs = ["php-cli", "php-mbstring", "php-xml", "php-curl", "php-zip", "php-mysql", "composer", "nodejs", "npm", "unzip"]
