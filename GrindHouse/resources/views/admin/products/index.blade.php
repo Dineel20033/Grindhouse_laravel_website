@@ -6,10 +6,32 @@
 
 <h1 class="text-3xl font-bold text-gray-800 mb-8">Manage Products</h1>
 
-<div class="mb-6 text-right">
-    <a href="{{ route('admin.products.create') }}" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold">
-        + Add New Product
-    </a>
+<div class="mb-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+    <form method="GET" action="{{ route('admin.products.index') }}" class="w-full md:max-w-md">
+        <div class="flex gap-2">
+            <input
+                type="text"
+                name="search"
+                value="{{ request('search') }}"
+                placeholder="Search products, categories, or price..."
+                class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-amber-500 focus:ring-amber-500"
+            >
+            <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">
+                Search
+            </button>
+            @if (request('search'))
+                <a href="{{ route('admin.products.index') }}" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-semibold">
+                    Clear
+                </a>
+            @endif
+        </div>
+    </form>
+
+    <div class="text-right">
+        <a href="{{ route('admin.products.create') }}" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold">
+            + Add New Product
+        </a>
+    </div>
 </div>
 
 <!-- Desktop Table -->

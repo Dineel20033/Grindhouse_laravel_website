@@ -12,13 +12,28 @@ class AdminProductController extends Controller
     /**
      * Display a listing of the resource. (admin_products.php display list)
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::with('category')->orderBy('name', 'asc')->get();
+        $search = trim((string) $request->query('search', ''));
+
+        $products = Product::with('category')
+            ->when($search !== '', function ($query) use ($search) {
+                $query->where(function ($inner) use ($search) {
+                    $inner->where('name', 'like', "%{$search}%")
+                        ->orWhere('description', 'like', "%{$search}%")
+                        ->orWhere('price', 'like', "%{$search}%")
+                        ->orWhereHas('category', function ($categoryQuery) use ($search) {
+                            $categoryQuery->where('name', 'like', "%{$search}%");
+                        });
+                });
+            })
+            ->orderBy('name', 'asc')
+            ->get();
+
         $categories = Category::all();
         
         // This view will contain the product list and the "Add New" form
-        return view('admin.products.index', compact('products', 'categories'));
+        return view('admin.products.index', compact('products', 'categories', 'search'));
     }
 
     /**
